@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+   <nav id="navbar">
+     <div><h1 id="font">SHIP-XPRESS</h1></div>
+    <div id="connect-wallet">
+        <button id='cbtn'onclick="connectWallet()">Connect Wallet</button>
+    </div>
+   </nav>
+    <div class="container">
+        <h1>Supply Chain Management</h1>
+        <h1 id="error-message"></h1>
+        <div id="create-shipment" class="form-section">
+            <h2>Create Shipment</h2>
+            <input type="text" id="receiver-address" placeholder="Receiver Address">
+            <input type="datetime-local" id="pickup-time" placeholder="Pickup Time">
+            <input type="number" id="distance" placeholder="Distance (km)">
+            <input type="number" id="price" placeholder="Price ($)">
+            <button onclick="validateForm();
+            ">Create Shipment</button>
+        </div>
+        <div id="fetch-shipments" class="form-section">
+            <h2>Fetch All Shipments</h2>
+            <button onclick="loadShipments()">Fetch Shipments</button>
+            <ul id="shipment-list"></ul>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
